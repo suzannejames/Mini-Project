@@ -1,0 +1,105 @@
+body{
+    background-image: url("/static/images/pexels-felix-mittermeier-956999.jpg");
+    background-position: center;
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+}
+.logo
+{
+    position: absolute;
+    left: 15px;
+    width:200px;
+    cursor: pointer;
+}
+
+#join-btn{
+    position: fixed;
+    top:37%;
+    left:70%;
+    margin-top:-50px;
+    margin-left:-100px;
+    font-size:30px;
+    padding:120px 60px;
+    border-radius: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url("/static/images/stars-gf9bc880f9_1920.jpg");
+    background-position: center;
+    background-size: cover;
+}
+#join-btn:hover{
+    transform: translateY(10px);
+    box-shadow: 5px 10px #000;
+}
+.row{
+    display:flex;
+    height: px;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    left: 150px;
+    top: 35%;
+    display: inline;
+    line-height: 50%;
+}
+h1{
+    font-size:100px;
+}
+h4{
+font-size:30px;
+line-height: 0px;
+}
+
+#video-streams{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    height: 90vh;
+    width: 1400px;
+    margin:0 auto;
+}
+
+.video-container{
+    max-height: 100%;
+    border: 2px solid black;
+    background-color: #203A49;
+}
+
+.video-player{
+    height: 100%;
+    width: 100%;
+}
+
+button{
+    border:none;
+    background-color: #ebe3e3;
+    font-family: 'Times New Roman', Times, serif;
+    color:#000;
+    padding:10px 20px;
+    font-size:16px;
+    margin:2px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#stream-controls{
+    display: none;
+    justify-content: center;
+    margin-top:0.5em;
+}
+
+@media screen and (max-width:1400px){
+    #video-streams{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        width: 95%;
+    }
+}
+.logo2
+{
+    position: absolute;
+    left: 30px;
+    top:87%;
+    width:200px;
+    cursor: pointer;
+}
+#join-btn{
+    color:white;
+}

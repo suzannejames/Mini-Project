@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width",initial-scale=1.0">
+	<title>Available Teachers</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+	.container{
+    width: 100%;
+    height: 100vh;
+    background-image:url("/static/images/pexels-felix-mittermeier-956999.jpg");
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+.navbar{
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    position: absolute;
+    left: 15px;
+    width:200px;
+    cursor: pointer;
+}
+nav{
+    flex:1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 13;
+}
+nav .dropdown {
+			position: relative;
+		}
+		nav .dropdown-content {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: -30px;
+			background-color: #181f4c;
+			min-width: 150px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+            border-radius: 5px;
+		}
+		nav .dropdown:hover .dropdown-content {
+			display: block;
+		}
+		nav .dropdown-content a {
+			color: #fff;
+			padding: 10px;
+			display: block;
+			text-decoration: none;
+            text-align: center;
+		}
+		nav .dropdown-content a:hover {
+			background-color: #000;
+		}
+		nav .logout-icon {
+			font-size: 20px;
+			margin-left: 10px;
+		}
+	</style>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="{% static 'images/finallogo.png' %}" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Your Profile</a>
+                        <div class="dropdown-content">
+                            <a href="studentprofile">Go to My Profile</a>
+                            <a href="/contact">Customer Support</a>
+                            <a href="/logout">Logout <i class="logout-icon">&#x2716;</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+	</style>
+</body>
+</head>
+<head>
+	<style>
+		body{
+			background-image: url("/static/images/pexels-felix-mittermeier-956999.jpg");
+			background-position: center;
+			background-size: cover;
+			font-family: 'Times New Roman', Times, serif;
+		}
+		.card-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			
+		}
+		.card {
+			border: 1px;
+			border-radius: 40px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			padding: 40px;
+			margin-left: 10px;
+			margin-right: 10px;
+			margin-bottom: 20px;
+			width: calc(25% - 80px);
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			background-color: #f7f7f7;
+			background-image: url("/static/images/stars.jpeg");
+			background-position: center;
+			background-size: cover;
+		}
+
+		.card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		.card:before {
+			content: '';
+			display: block;
+			padding-top: 100%;
+			border-radius: 50%;
+		}
+
+		.card img {
+			position: absolute;
+			top: 35px;
+			left: 50px;
+			width: 60%;
+			height: 40%;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+
+		.card h2 {
+			margin: 0;
+			font-size: 24px;
+			font-weight: normal;
+			color: #fff;
+			margin-top: 20px;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+
+		.card p {
+			margin: 0;
+			font-size: 18px;
+			color: #d3c5c5;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+
+		.card span {
+			display: block;
+			font-size: 16px;
+			color: #bcadad;
+			text-align: center;
+		}
+
+		.card .rating {
+			color: orange;
+			font-size: 20px;
+			text-align: center;
+			margin-top: 10px;
+		}
+		#availableteachers
+		{
+			font-family: 'Times New Roman', Times, serif;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<h2 id="availableteachers"><center>AVAILABLE TEACHERS</center></h2>
+	<div class="card-container">
+        {% for i in res1 %}
+		<div class="card">
+			<a href="/choiceofteacher"><img src="https://via.placeholder.com/300x300?text=Teacher+1" alt="Teacher 1"></a>
+			<a href="/choiceofteacher" style="text-decoration: none;">
+			<h2>{{i.name}}</h2>
+			<p>Language:{{i.lang}}</p>
+			<span>Proficiency:{{i.prof}}</span>
+			<span class="rating">{{i.rating}}</span>
+			</a>
+		</div>
+        {% endfor %}
+	</div>
+</body>

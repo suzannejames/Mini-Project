@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Schedule Class</title>
+  <link rel="stylesheet" href="{% static 'css/scheduleclass.css' %}">
+</head>
+<style>
+    input[type=submit]
+    {
+        width: 100%;
+        font-size: 30px;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 200px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+        background-image: url("/static/images/stars.jpeg");
+        background-position: center;
+        background-size: cover;
+        transition: 0.3s;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="{% static 'images/finallogo.png' %}" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/teacherlogin">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Your Profile</a>
+                        <div class="dropdown-content">
+                            <a href="/teacherprofile">Go to My Profile</a>
+                            <a href="/contact">Customer Support</a>
+                            <a href="/logout">Logout <i class="logout-icon">&#x2716;</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+            <div class="schedule">
+                <h1>Schedule Class</h1>
+                <form action="https://formspree.io/f/mlekqowp" method="POST">
+                {% csrf_token %}
+                <div><input type="text" name="Name" placeholder="Name" /></div>
+                <div><input type="date" id="day" name='Day' placeholder="Days" /></div>
+                <div><input type="time" id="time" name='time' placeholder="Time" /></div>
+                <div><input type="text" id="note" name='note' placeholder="Note" /></div>
+                <a href="/teacherstudent">
+                    <button class="schedule-button">Submit</button>
+                  </a>
+                </form>
+                
+            </div>
+        </div>
+</body>
+</html>

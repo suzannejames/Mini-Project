@@ -1,0 +1,50 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="{% static '/css/payment.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="{% static 'images/finallogo.png' %}" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="/">Your Profile</a>
+                        <div class="dropdown-content">
+                            
+                            <a href="/customer">Customer Support</a>
+                            <a href="/logout">Logout <i class="logout-icon">&#x2716;</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div><h1>Payment</h1></div>
+        <div><img src="{% static '/images/WhatsApp Image 2023-06-18 at 3.37.33 PM.jpeg' %}" alt="" class="qrcode"></div>
+        <div><p class="note">Note:Please Pay the Amount for the period you have selected</p></div>
+        <div class="lastnote">
+            <p class="rates">The rates are : 
+            <li>2 weeks, 3 hours each: Rs. 300</li>
+            <li>3 weeks, 3 hours each: Rs. 600</li>
+            <li>4 weeks, 4 hours each: Rs. 900</li>
+            </p>
+        </div>
+
+
+
+
+
+
+
+
+</body>
+</html>

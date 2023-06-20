@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image:url("/static/images/pexels-felix-mittermeier-956999.jpg");
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+.navbar{
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    position: absolute;
+    left: 15px;
+    width:200px;
+    cursor: pointer;
+}
+nav{
+    flex:1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 13;
+}
+nav .dropdown {
+			position: relative;
+		}
+		nav .dropdown-content {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: -30px;
+			background-color: #181f4c;
+			min-width: 150px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+            border-radius: 5px;
+		}
+		nav .dropdown:hover .dropdown-content {
+			display: block;
+		}
+		nav .dropdown-content a {
+			color: #fff;
+			padding: 10px;
+			display: block;
+			text-decoration: none;
+            text-align: center;
+		}
+		nav .dropdown-content a:hover {
+			background-color: #000;
+		}
+		nav .logout-icon {
+			font-size: 20px;
+			margin-left: 10px;
+		}
+        .profile-details .edit-button {
+      font-size: 16px;
+      color: #666;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+    }
+    
+    .profile-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: mintcream;
+      padding: 10px;
+      margin-top: 40px;
+      position: relative;
+      bottom: 53px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      border-radius: 5px;
+    }
+    
+    .profile-image {
+      flex: 0 0 200px;
+      text-align: center;
+    }
+    
+    .profile-image img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+    
+    .profile-details {
+      flex: 1;
+      margin-left: 20px;
+    }
+    
+    .profile-details h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+    
+    .profile-details p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #000;
+    }
+    
+    .profile-about-me {
+      margin-top: 20px;
+    }
+    
+    .profile-about-me h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .profile-about-me p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #000;
+    }
+    
+    .profile-languages {
+      margin-top: 20px;
+    }
+    
+    .profile-languages h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .profile-languages ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .profile-languages li {
+      margin-top: 5px;
+      font-size: 16px;
+      color: #000;
+    }
+    
+    .profile-proficiency {
+      margin-top: 20px;
+    }
+    
+    .profile-proficiency h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .profile-proficiency p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #000;
+    }
+    
+    .profile-rating {
+      margin-top: 20px;
+    }
+    
+    .profile-rating h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .profile-rating p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="/static/images/finallogo.png" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Your Profile</a>
+                        <div class="dropdown-content">
+                            <a href="/teacherprofile">Go to My Profile</a>
+                            <a href="/contact">Customer Support</a>
+                            <a href="/logout">Logout <i class="logout-icon">&#x2716;</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+  <div class="profile-container">
+    <div class="profile-image">
+      <img src="{% static 'images/profilepic.png' %}" alt="Teacher Profile Picture">
+    </div>
+    <div class="profile-details">
+      {% for i in res2 %}
+        <h2>{{i.name}}</h2>
+        <p>Email: {{i.email}}</p>
+        <!-- <div class="profile-about-me">
+          <h3>About Me <button class="edit-button">Edit</button></h3>
+          <p>I am a dedicated language teacher with experience in teaching English, Spanish, and French. I believe in creating a positive and engaging learning environment to help students develop their language skills effectively.</p>
+        </div> -->
+        <div class="profile-languages">
+          <h3>Language Selected <button class="edit-button">Edit</button></h3>
+          <h2>{{i.lang}}</h2>
+          <!-- <ul>
+            <li>English</li>
+            <li>Spanish</li>
+            <li>French</li>
+          </ul> -->
+        </div>
+        {% endfor %}
+        <!-- <div class="profile-proficiency">
+          <h3>Language Proficiency <button class="edit-button">Edit</button></h3>
+          <p>English: Advanced</p>
+          <p>Spanish: Intermediate</p>
+          <p>French: Beginner</p>
+        </div>
+        <div class="profile-rating">
+          <h3>Rating from Students <button class="edit-button">Edit</button></h3>
+          <p>4.8/5 based on 50 reviews</p>
+        </div> -->
+    </div>
+  </div>
+</body>
+</html>

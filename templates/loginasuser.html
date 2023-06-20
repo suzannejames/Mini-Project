@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        input[type=submit]
+        {
+            width: 100%;
+            font-size: 30px;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 200px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #fff;
+            background-image: url("/static/images/stars.jpeg");
+            background-position: center;
+            background-size: cover;
+            transition: 0.3s;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/"><img src="/static/images/finallogo.png" alt="" class="logo"></a>
+        </div>
+        <div class="box">
+            <h3><span class="span"></span>Login as User</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input_box">
+                    <input type="text" id="username" name="username" placeholder=Username required>
+                </div>
+                <div class="input_box">
+                     <input type="password" id="password" name="password" placeholder=Password required>
+                </div>
+                <a href="/afterlogin"><input type="submit" value="Submit"></a>
+                
+
+
+                <p class="signup_link">Don't have an account ? <a href="/signupasuser">Signup</a></p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

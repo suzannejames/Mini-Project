@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/teacherstudent.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <img src="{% static 'images/finallogo.png' %}" class="logo">
+      <nav>
+          <ul>
+              <li><a href="/teacherlogin">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+              <li class="dropdown">
+                  <a href="#">Your Profile</a>
+                  <div class="dropdown-content">
+                      <a href="/contact">Customer Support</a>
+                      <a href="/logout">Logout <i class="logout-icon">&#x2716;</i></a>
+                  </div>
+              </li>
+          </ul>
+      </nav>
+    </div>
+    <table id="editableTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Completed Units</th>
+          <th>Time</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td contenteditable="true">John</td>
+          <td contenteditable="true">5/10</td>
+          <td contenteditable="true">05:00 PM</td>
+          <td><div class="button">
+            <a href="/scheduleclass"><input type="submit" value="Schedule Class"></a>
+          </div></td>
+          <td><div class="button">
+            <a href="/call"><input type="submit" value="Join Call"></a>
+          </div></td>
+        </tr>
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td><div class="button">
+            <a href="/scheduleclass"><input type="submit" value="Schedule Class"></a>
+          </div></td>
+          <td><div class="button">
+            <a href="/call"><input type="submit" value="Join Call"></a>
+          </div></td>
+        </tr>
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td><div class="button">
+            <a href="/scheduleclass"><input type="submit" value="Schedule Class"></a>
+          </div></td>
+          <td><div class="button">
+            <a href="/call"><input type="submit" value="Join Call"></a>
+          </div></td>
+        </tr>
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td><div class="button">
+            <a href="/scheduleclass"><input type="submit" value="Schedule Class"></a>
+          </div></td>
+          <td><div class="button">
+            <a href="/call"><input type="submit" value="Join Call"></a>
+          </div></td>
+        </tr>
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td><div class="button">
+            <a href="/scheduleclass"><input type="submit" value="Schedule Class"></a>
+          </div></td>
+          <td><div class="button">
+            <a href="/call"><input type="submit" value="Join Call"></a>
+          </div></td>
+        </tr>
+        <tr>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td><div class="button">
+            <a href="/scheduleclass"><input type="submit" value="Schedule Class"></a>
+          </div></td>
+          <td><div class="button">
+            <a href="/call"><input type="submit" value="Join Call"></a>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    var table = document.getElementById('editableTable');
+function updateProgress() {
+  var progressTag = document.getElementById("progressTag");
+  var progressBar = document.getElementById("progressBar");
+  
+  // Get the text content from the progress tag
+  var progress = progressTag.textContent;
+  
+  // Convert the progress to a valid percentage
+  var percentage = parseInt(progress) || 0;
+  percentage = Math.min(100, Math.max(0, percentage));
+  
+  // Update the width of the progress bar
+  progressBar.style.width = percentage + "%";
+}
+
+
+table.addEventListener('input', function(e) {
+  var target = e.target;
+  if (target && target.nodeName === 'TD') {
+    // Handle the changes here
+    var value = target.innerText;
+    console.log('New value:', value);
+  }
+});
+  </script>
+</body>
+</html>

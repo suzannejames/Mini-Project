@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width",initial-scale=1.0>
+    <link rel="stylesheet" href="{% static 'css/afterlogin.css' %}"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">   
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="{% static 'images/finallogo.png' %}" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Your Profile</a>
+                        <div class="dropdown-content">
+                            <a href="/teacherprofile">Go to My Profile</a>
+                            
+                            <a href="/contact">Customer Support</a>
+                            <a href="/logout">Logout <i class="logout-icon">&#x2716;</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h1>Fluential</h1>
+                <h4>Uniting Nations Through Speech</h4>
+            </div>
+            <div class="col">
+                <div class="card">                    
+                    <h2><center>Student details</center></h2>
+                    <p><br><br>Find your student's details and track their progress here</p> <br>                  
+                    <a href="/teacherstudent">
+                        <button class="explore">Go to Student Details</button>       
+                    </a>             
+                </div>
+            </div> 
+        </div>
+    </div>
+
+</body>

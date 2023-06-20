@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Language Learning</title>
+		<link rel="stylesheet" href="{% static 'css/choiceofteacher.css' %}">
+	</head>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		main {
+			padding: 20px;
+		}
+		h1 {
+			font-size: 36px;
+			margin-top: 0;
+		}
+		p {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+	</style>
+<body>
+	<div class="container1">
+        <div class="navbar">
+            <img src="{% static 'images/finallogo.png' %}" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Your Profile</a>
+                        <div class="dropdown-content">
+                            <a href="#">Go to My Profile</a>
+                            <a href="#">Course</a>
+                            <a href="/contact">Customer Support</a>
+                            <a href="/logout">Logout <i class="logout-icon">&#x2716;</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+    	</div>
+		<div class="container">
+			<div class="form-card2">
+				<h2>Class Details</h2>
+				<form action="https://formspree.io/f/myyarnna" method="post">
+					{% csrf_token %}
+					<label for="name">Full Name:</label>
+					<input type="text" name="name" required id="name">
+					<label for="browser">Choose your Period from the list:</label>
+					<input list="browsers" name="Period" id="browser">
+					<datalist id="browsers">
+					<option value="2 Weeks, 3 Hours: Rs. 300">
+					<option value="3 Weeks, 3 Hours: Rs. 600">
+					<option value="4 weeks, 4 Hours: Rs. 900">
+					</datalist>
+					<label for="knowledge">Details about your knowledge of the language:</label>
+					<textarea id="knowledge" name="knowledge"></textarea>
+					<a href="/payment">
+						<button class="submit-btn">Submit</button>
+					</a>
+				</form>
+				<a href="/payment">				<button class="pay">Go to Payment</button>
+				</a>
+				<div><h5>After Clicking submit please press "Go back" and click "Go to Payment to be directed to your payment page"</h5>				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

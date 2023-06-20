@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Available Languages</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+    width: 100%;
+    height: 100vh;
+    background-image:url("/static/images/pexels-felix-mittermeier-956999.jpg");
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+.navbar{
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    position: absolute;
+    left: 15px;
+    width:200px;
+    cursor: pointer;
+}
+nav{
+    flex:1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 13;
+}
+nav .dropdown {
+			position: relative;
+		}
+nav .dropdown-content {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: -30px;
+	background-color: #181f4c;
+	min-width: 150px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+    border-radius: 5px;
+		}
+nav .dropdown:hover .dropdown-content {
+			display: block;
+		}
+nav .dropdown-content a {
+	color: #fff;
+	padding: 10px;
+	display: block;
+	text-decoration: none;
+    text-align: center;
+		}
+nav .dropdown-content a:hover {
+	background-color: #000;
+	}
+nav .logout-icon {
+	font-size: 20px;
+	margin-left: 10px;
+		}
+	</style>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="{% static 'images/finallogo.png' %}" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Your Profile</a>
+                        <div class="dropdown-content">
+                            <a href="/studentprofile">Go to My Profile</a>
+                            <a href="/">Course</a>
+                            <a href="/contact">Customer Support</a>
+                            <a href="/logout">Logout <i class="logout-icon">&#x2716;</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+	<style>
+		body
+		{
+			background-image: url("/static/images/pexels-felix-mittermeier-956999.jpg");
+			background-position: center;
+			background-size: cover;
+		}
+		.card {
+			margin-left: 280px;
+			border: none;
+			width: 50%;
+			border-radius: 20px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			margin-bottom: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			-moz-box-align: center;
+			background-color: #fff;
+			cursor:pointer;
+			position: relative;
+			left: -35px;
+			background-image: url("/static/images/stars.jpeg");
+			background-position: center;
+			background-size: cover;
+		}
+		.card h2 {
+			margin: 0;
+			font-size: 24px;
+			font-weight: normal;
+			color: #fff;
+		}
+
+		.card p {
+			margin: 10px 0 0;
+			font-size: 18px;
+			color: #f1ebeb;
+		}
+		#language{
+			color:white;
+			font-family: 'Times New Roman', Times, serif;
+		}
+	</style>
+</head>
+<body>
+	<h2 id="language"><center>LANGUAGES WE OFFER</center></h2>
+	<a href="/choiceofteacher" style="text-decoration: none;">
+    {% for j in res %}
+	<div class="card">
+		<h1><b>{{j.name}}</b></h1>
+		<h2><b>{{j.name1}}</b></h2>
+		<p>{{j.desc}}</p>
+	</div>
+        {% endfor %}
+<!--	</a>
+	<a href="teachers.html" style="text-decoration: none;">-->
+<!--	<div class="card">-->
+<!--		<h1><b>हिंदी</b></h1>-->
+<!--		<h2>Hindi</h2>-->
+<!--		<p>Spoken in most parts of India, mainly situated around North India.</p>-->
+<!--	</div>-->
+<!--	</a>-->
+<!--	<a href="teachers.html" style="text-decoration: none;">-->
+<!--	<div class="card">-->
+<!--		<h1><b>മലയാളം</b></h1>-->
+<!--		<h2>Malayalam</h2>-->
+<!--		<p>Spoken in Kerala</p>-->
+<!--	</div>-->
+<!--</a>-->
+<!--<a href="teachers.html" style="text-decoration: none;">-->
+
+<!--	<div class="card">-->
+<!--		<h1><b>বাংলা</b></h1>-->
+<!--		<h2>Bengali</h2>-->
+<!--		<p>The second language that most people in India speak with 9.72 Crore language speakers in India</p>		-->
+<!--	</div>-->
+<!--</a>-->
+<!--<a href="teachers.html" style="text-decoration: none;">-->
+<!--	<div class="card">-->
+<!--		<h1><b>தமிழ்</b></h1>-->
+<!--		<h2>Tamil</h2>-->
+<!--		<p>A Dravidian language natively spoken by the Tamil people of South Asia. Tamil is an official language of the Indian state of Tamil Nadu</p>		-->
+<!--	</div>-->
+<!--</a>-->
+<!--<a href="teachers.html" style="text-decoration: none;">-->
+<!--	<div class="card">-->
+<!--		<h1><b>ਪੰਜਾਬੀ</b></h1>-->
+<!--		<h2>Punjabi</h2>-->
+<!--		<p>Punjabi, sometimes spelled Panjabi, is an Indo-Aryan language of the Punjab region of Pakistan and India. It has approximately 113 million native speakers</p>		-->
+<!--	</div>
+</a> -->
+</body>
+</html>

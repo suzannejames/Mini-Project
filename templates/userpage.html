@@ -1,0 +1,111 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/userpage.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+   
+  <div class="container">
+   
+    <div class="title">Registration</div>
+    <div class="content">
+     
+      <form  method="POST">
+      {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box"><span class="details">Full Name</span>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box"><span class="details">Language of Interest</span>
+            <input type="text" id="lang" name="lang" placeholder="Enter your language" required>
+          </div>
+          <div class="input-box"><span class="details">Email</span>
+            <input type="text" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box"><span class="details">Phone Number</span>
+            <input type="text" id="phone" name="phone" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box"><span class="details">Password</span>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box"><span class="details">Confirm Password</span>
+            <input type="text" id="password1" name="password1" placeholder="Confirm your password" required></div>
+        </div>
+        <div class="button"><a href="/"><input type="submit" value="Register"></a></div>
+        
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html> -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/userpage.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <img src="{% static 'images/finallogo.png' %}" class="logo">
+      <nav>
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+              <li class="dropdown">
+                  <a href="#">Your Profile</a>
+                  <div class="dropdown-content">
+                    <a class="dropdown-item" href="/loginasuser">Login/Sign Up as User </a>
+                    <a class="dropdown-item" href="/loginastutor">Login/Sign Up as Tutor</a>
+                  </div>
+              </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="title">Student Registration</div>
+    <div class="content">
+      <form  method="POST">
+      {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Language of Interest</span>
+            <input type="text" id="lang" name="lang" placeholder="Enter your language" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" id="phone" name="phone" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" id="password1" name="password1" placeholder="Confirm your password" required></div>
+        </div>
+        <div class="button">
+          <a href="/"><input type="submit" value="Register"></a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

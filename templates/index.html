@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>FLUENTIAL</title>
+  <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+<body>
+  <div class="hero_area">
+      <div class="navbar">
+        <img src="{% static 'images/finallogo.png' %}" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li class="dropdown">
+                    <a href="#">Your Profile</a>
+                    <div class="dropdown-content">
+                        <a href="/loginasuser">Login/Sign Up as User</a>
+                        <a href="/loginastutor">Login/Sign Up as Tutor</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <section class="first_page">
+      <div class="container">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1><b>FLUENTIAL</b></h1>
+                    <p id="hello">
+                      Uniting Nations Through Speech
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="container" id="about">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2 id="hello">
+                About Us
+              </h2>
+            </div>
+            <p id="hello">
+              A one stop destination for all your linguistic needs. Whether you want to learn a language to enhance your travelling experience or you want to settle in a new place or if you want to simply enjoy the learning experience, FLUENTIAL is here for you.
+            </p>
+      </div>
+    </div>
+  </section>
+  <section class="brand_section">
+    <div class="container">
+      <div class="brand_container layout_padding2">
+        {% for i in result %}
+        <div class="box">
+            <div class="img-box">
+              <img src="{{i.img.url}}" alt="">
+            </div>
+            <div class="detail-box">
+              <h6 class="price"></h6>
+              <h6>{{i.name}}</h6>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </section>
+  <section class="contact_section layout_padding">
+    <div class="container ">
+      <div class="heading_container">
+        <h2 class="">
+          Contact Us
+        </h2>
+      </div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form method="POST">
+            {% csrf_token %}
+            <div><input type="text" id="name" name='name' placeholder="Name" /></div>
+            <div><input type="email" id="email" name='email' placeholder="e_mail" /></div>
+            <div><input type="number" id="phone" name='phone' placeholder="Phone" /></div>
+            <div><input type="text" id="message" name='message' placeholder="Message" /></div>
+            <div class="d-flex ">
+             <a href="/"> <input type="submit"></a>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="map_container">
+            <div class="map-responsive">
+              <iframe
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=College+Engineering+Chengannur"
+                width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Testimonial
+        </h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="client_container layout_padding2">
+        <div class="client_box b-1">
+          <div class="client-id">
+            <div class="name">
+              <h5>abdbc</h5><p>Consectetur adipiscing</p>
+            </div>
+          </div>
+          <div class="detail">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrudLorem ipsum
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="info_logo"><h2>FLUENTIAL</h2></div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact"><h5>About website</h5><div>
+              <div class="img-box">
+                <img src="{% static 'images/location-white.png' %}" width="18px" alt="">
+              </div><p>College of Engineering,Chengannur</p></div>
+            <div>
+              <div class="img-box"><img src="{% static 'images/telephone-white.png' %}" width="12px" alt="">
+              </div><p>+01 1234567890</p></div>    
+            <div>
+              <div class="img-box">
+                <img src="{% static 'images/envelope-white.png' %}" width="18px" alt="">
+              </div><p>fluential@gmail.com</p></div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>Info</h5>
+            <p>Learn through voice chat!</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+            <h5>Contact</h5>
+            <form action="">
+              <input type="email" placeholder="Enter your email">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container-fluid footer_section ">
+    <div class="container"><p>&copy; 2023 All Rights Reserved</p></div>
+  </section>
+</body>
+</body>
+</html>

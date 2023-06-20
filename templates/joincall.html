@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Call</title>
+    <link rel="stylesheet" href="{% static 'css/joincall.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="{% static 'images/finallogo.png' %}" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Your Profile</a>
+                        <div class="dropdown-content">
+                            <a href="/contact">Customer Support</a>
+                            <a href="/logout">Logout <i class="logout-icon">&#x2716;</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+            <div class="schedule">
+                <h1>Scheduled Class for Student</h1>
+                <h3> Your Class is Scheduled at</h3>
+                <h2>Date: 12-03-2023</h2>
+                <h2>Time: 05:00 PM</h2>
+                </form>
+                <a href="/call">
+                <button>Join Call</button>
+            </a>    
+            </div>
+        </div>
+</body>
+</html>
